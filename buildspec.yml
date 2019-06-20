@@ -28,6 +28,9 @@ phases:
       - echo Pushing the Docker images...
       - docker push $REPOSITORY_URI:latest
       - docker push $REPOSITORY_URI:$IMAGE_TAG
+      - ls -al
+      - ls -al $CODEBUILD_SRC_DIR
+      - pwd
 artifacts:
   files:
-    - go-outyet.json
+    - BaseImage/*
