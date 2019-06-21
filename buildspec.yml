@@ -28,7 +28,9 @@ phases:
       - echo Pushing the Docker images...
       - docker push $REPOSITORY_URI:latest
       - docker push $REPOSITORY_URI:$IMAGE_TAG
+      - ls -al $CODEBUILD_SRC_DIR
       - echo Writing image definitions file...
       - printf '[{"name":"go-outyet","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > imagedefinitions.json
+      - cat imagedefinitions.json
 artifacts:
     files: imagedefinitions.json
