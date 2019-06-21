@@ -33,4 +33,4 @@ phases:
       - pwd
 artifacts:
   files:
-    - BaseImage/*
+    - $IMAGE_TAG
