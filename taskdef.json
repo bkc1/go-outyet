@@ -2,12 +2,12 @@
     "executionRoleArn": "arn:aws:iam::692393258246:role/ecsTaskExecutionRole",
     "containerDefinitions": [
         {
-            "name": "go-outyet",
-            "image": "<IMAGE1_NAME>",
+            "name": "sample-website",
+            "image": "go-outyet",
             "essential": true,
             "portMappings": [
                 {
-                    "hostPort": 80,
+                    "hostPort": 8080,
                     "protocol": "tcp",
                     "containerPort": 8080
                 }
@@ -15,7 +15,7 @@
         }
     ],
     "requiresCompatibilities": [
-        "FARGATE"
+        "EC2"
     ],
     "networkMode": "awsvpc",
     "cpu": "256",

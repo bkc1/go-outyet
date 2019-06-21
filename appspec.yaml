@@ -6,4 +6,10 @@ Resources:
         TaskDefinition: <TASK_DEFINITION>
         LoadBalancerInfo:
           ContainerName: "go-outyet"
-          ContainerPort: 80
+          ContainerPort: 8080
+        PlatformVersion: "LATEST"
+        NetworkConfiguration:
+            AwsvpcConfiguration:
+              Subnets: ["subnet-8cf7e7c5", "subnet-fb20de9d"]
+              SecurityGroups: ["sg-80375ffa"]
+              AssignPublicIp: "ENABLED"
