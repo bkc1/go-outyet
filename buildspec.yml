@@ -33,4 +33,4 @@ phases:
       - pwd
 artifacts:
   files:
-    - $IMAGE_TAG
+    - SourceArti
