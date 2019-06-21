@@ -1,0 +1,29 @@
+{
+    "taskDefinition": "ecs-demo:1",
+    "cluster": "go-outyet",
+    "loadBalancers": [
+        {
+            "targetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:692393258246:targetgroup/ECS1/d65fd7f2d6eb1d20",
+            "containerName": "go-outyet",
+            "containerPort": 80
+        }
+    ],
+    "desiredCount": 2,
+    "launchType": "FARGATE",
+    "schedulingStrategy": "REPLICA",
+    "deploymentController": {
+        "type": "CODE_DEPLOY"
+    },
+    "networkConfiguration": {
+        "awsvpcConfiguration": {
+            "subnets": [
+                "subnet-8cf7e7c5",
+                "subnet-8cf7e7c5"
+            ],
+            "securityGroups": [
+                "sg-80375ffa"
+            ],
+            "assignPublicIp": "ENABLED"
+        }
+    }
+}
